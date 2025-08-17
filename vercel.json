@@ -1,28 +1,15 @@
 {
-  "version": 2,
+  "version":2,
   "builds": [
     {
-      "src": "api/index.js",
+      "src": "./index.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "/api/index.js"
-    },
-    {
       "src": "/(.*)",
-      "dest": "/api/index.js"
+      "dest": "/"
     }
-  ],
-  "functions": {
-    "api/index.js": {
-      "maxDuration": 30
-    }
-  },
-  "env": {
-    "MONGODB_ATLAS_URI": "@mongodb-atlas-uri",
-    "NODE_ENV": "production"
-  }
+  ]
 }
